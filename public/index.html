@@ -10,9 +10,9 @@
   <h1> Chats con nodejs</h1>
   <div id="messages"></div>
   <br/>
-  <form>
-  	<input type="text" id="username" placeholder="Nombre">
-  	<input type="text" id="texto" placeholder="Mensaje...">
+  <form onsubmit="return addMessage(this)">
+  	<input type="text" id="name" placeholder="Nombre">
+  	<input type="text" id="text" placeholder="Mensaje...">
   	<input type="submit" value="Enviar">
   </form>
 </body>  

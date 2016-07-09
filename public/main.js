@@ -3,14 +3,26 @@ var socket = io.connect('http://localhost:3000', {'forceNew': true});
 socket.on('messages', function(data){
 	console.log(data);
 	render(data);
-})
+});
 
 function render (data) {
-	var html = `<div>
-					<strong>${data.author}</strong>:
+	var html = data.map(function(data, index){
+		return(`<div>
+					<strong>${data.author}</strong>
 					<em>${data.text}</em>
-				</div>`;
+				</div>`);
+	}).join(" ");
 
 	 document.getElementById('messages').innerHTML = html;
+}
+
+function addMessage(e) {  
+    var mensaje = {
+    author: document.getElementById('name').value,
+    text: document.getElementById('text').value
+  };
+
+  socket.emit('new-message', mensaje);
+  return false;
 }
 
