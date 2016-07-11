@@ -14,8 +14,13 @@ Install express.
 
 
 `$ npm install -g express-generator@4`
-Go to the cloned project folder, then execute
+
+Go to the cloned project folder, then execute.
+
 `$ npm install -g express-generator@4`
-that is for install the dependencies
-Finally run this for install socket.io module
+
+that is for install the dependencies.
+
+Finally run this for install socket.io module.
+
 `$ npm install socket.io -s`
