@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  section(class="container")
+    h1= title
+    p #{welcome}
+  section(class="container")
+    div(class="row")
+      ul(id="messages-area")
+  section(class="container")    
+    form(id="form" onsubmit="return false;")
+      fieldset(class="form-group")
+        input(id="new-message", type="text", class="form-control form-control-success")
+      button(type="button",  name="button", onclick="sendFunction()", class="btn btn-primary-outline") Send
+       
+  script( type="text/javascript", src="/socket.io/socket.io.js")
+  script( type="text/javascript", src="//code.jquery.com/jquery-1.11.3.min.js")     
+  script( type="text/javascript").
+    var socket = io();
+    function sendFunction() {
+      socket.emit('new message', $('#new-message').val());
+      $('#new-message').val('');
+    }
+    socket.on('chat message', function(msg){
+      $('#messages-area').append($('<li>').text(msg));
+    });
