@@ -1,5 +1,5 @@
 # chat_nodejs
-This is a litte chat buil with Express Framework.
+This is a litte chat buit with Express Framework.
 
 ####Intructions
 First be sure you have Node.js installed, if not install it.
