@@ -3,3 +3,21 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  ul(id="messages-area")
+  
+  form(id="form" onsubmit="return false;")
+    input(id="new-message", type="text")
+    br
+    button(type="button",  name="button", onclick="sendFunction()") Send
+       
+  script( type="text/javascript", src="/socket.io/socket.io.js")
+  script( type="text/javascript", src="//code.jquery.com/jquery-1.11.3.min.js")     
+  script( type="text/javascript").
+    var socket = io();
+    function sendFunction() {
+      socket.emit('new message', $('#new-message').val());
+      $('#new-message').val('');
+    }
+    socket.on('chat message', function(msg){
+      $('#messages-area').append($('<li>').text(msg));
+    });

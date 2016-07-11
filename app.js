@@ -10,6 +10,9 @@ var users = require('./routes/users');
 
 var app = express();
 
+// call socket.io to the app
+app.io = require('socket.io')();
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -56,5 +59,14 @@ app.use(function(err, req, res, next) {
   });
 });
 
+// start listen with socket.io
+app.io.on('connection', function(socket){
+  console.log('a user connected');
+
+  socket.on('new message', function(msg){
+    console.log('new message: ' + msg);
+    app.io.emit('chat message', msg);
+  });
+});
 
 module.exports = app;
