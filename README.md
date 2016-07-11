@@ -2,11 +2,17 @@
 This is a litte chat buil with Express Framework.
 
 ####Intructions
-First be sure you have Node.js installed, if not install it
+First be sure you have Node.js installed, if not install it.
+
 [Node.js](https://nodejs.org/en/)
-You can check if node is installed running this
+
+You can check if node is installed running this.
+
 `$ npm -v`
-Install express
+
+Install express.
+
+
 `$ npm install -g express-generator@4`
 Go to the cloned project folder, then execute
 `$ npm install -g express-generator@4`
