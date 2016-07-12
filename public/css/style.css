@@ -1,0 +1,33 @@
+#content{
+	display: none;
+}
+
+#body{
+	background-color: #2E2E2E;
+	color: black;
+}
+
+#chat{
+      background-color: white;
+      width: 100%;
+      float:left;
+      min-height: 350px;
+}
+#login-error{
+	display: none;
+	width:300px;
+	text-align:center;
+	margin:0 auto;
+}
+
+#nickWrap{
+	width:300px;
+	text-align:center;
+	margin:0 auto;
+}
+#send-message{
+	text-align:center;
+	margin:0 auto;
+}
+
+
