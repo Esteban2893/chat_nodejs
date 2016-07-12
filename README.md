@@ -17,7 +17,7 @@ Install express.
 
 Go to the cloned project folder, then execute.
 
-`$ npm install -g express-generator@4`
+`$ npm install`
 
 that is for install the dependencies.
 
