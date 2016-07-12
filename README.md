@@ -24,3 +24,7 @@ that is for install the dependencies.
 Finally run this for install socket.io module.
 
 `$ npm install socket.io -s`
+
+Now the chat is ready to run... just start up the server with the sentence below
+
+`$ npm start`
